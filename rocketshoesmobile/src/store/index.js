@@ -8,10 +8,7 @@ const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 const sagaMiddleware = createSagaMiddleware({sagaMonitor});
 
 const enhancer = __DEV__
-  ? compose(
-      console.tron.createEnhancer(),
-      applyMiddleware(sagaMiddleware),
-    )
+  ? compose(console.tron.createEnhancer(), applyMiddleware(sagaMiddleware))
   : applyMiddleware(sagaMiddleware);
 
 const store = createStore(rootReducer, enhancer);
