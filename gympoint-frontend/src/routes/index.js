@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 import SignIn from '../pages/SignIn';
 
@@ -23,20 +24,20 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={SignIn} />
 
-      <Route path="/students/list" component={StudentList} />
-      <Route path="/students/new" component={StudentNew} />
-      <Route path="/students/edit/:id" component={StudentEdit} />
+      <Route path="/students/list" component={StudentList} isPrivate />
+      <Route path="/students/new" component={StudentNew} isPrivate />
+      <Route path="/students/edit/:id" component={StudentEdit} isPrivate />
 
-      <Route path="/plans/list" component={PlanList} />
-      <Route path="/plans/new" component={PlanNew} />
-      <Route path="/plans/edit/:id" component={PlanEdit} />
+      <Route path="/plans/list" component={PlanList} isPrivate />
+      <Route path="/plans/new" component={PlanNew} isPrivate />
+      <Route path="/plans/edit/:id" component={PlanEdit} isPrivate />
 
-      <Route path="/enrollments/list" component={EnrollmentList} />
-      <Route path="/enrollments/new" component={EnrollmentNew} />
-      <Route path="/enrollments/edit/:id" component={EnrollmentEdit} />
+      <Route path="/enrollments/list" component={EnrollmentList} isPrivate />
+      <Route path="/enrollments/new" component={EnrollmentNew} isPrivate />
+      <Route path="/enrollments/edit/:id" component={EnrollmentEdit} isPrivate />
 
-      <Route path="/helporders/list" component={HelpOrderList} />
-      <Route path="/helporders/answer/:id" component={HelpOrderAnswer} />
+      <Route path="/helporders/list" component={HelpOrderList} isPrivate />
+      <Route path="/helporders/answer/:id" component={HelpOrderAnswer} isPrivate />
     </Switch>
   );
 }
