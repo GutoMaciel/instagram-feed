@@ -34,10 +34,18 @@ export default function Routes() {
 
       <Route path="/enrollments/list" component={EnrollmentList} isPrivate />
       <Route path="/enrollments/new" component={EnrollmentNew} isPrivate />
-      <Route path="/enrollments/edit/:id" component={EnrollmentEdit} isPrivate />
+      <Route
+        path="/enrollments/edit/:id"
+        component={EnrollmentEdit}
+        isPrivate
+      />
 
       <Route path="/helporders/list" component={HelpOrderList} isPrivate />
-      <Route path="/helporders/answer/:id" component={HelpOrderAnswer} isPrivate />
+      <Route
+        path="/helporders/answer/:id"
+        component={HelpOrderAnswer}
+        isPrivate
+      />
     </Switch>
   );
 }
