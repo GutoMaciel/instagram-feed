@@ -28,13 +28,11 @@ export default function SignIn() {
     <Container>
       <img src={logo} alt="Gympoint" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <strong>SEU E-MAIL</strong>
+        <strong>EMAIL</strong>
         <Input name="email" type="email" placeholder="example@email.com" />
-        <strong>SUA SENHA</strong>
+        <strong>PASSWORD</strong>
         <Input name="password" type="password" placeholder="**********" />
-        <button type="submit">
-          {loading ? 'Carregando...' : 'Entrar no sistema'}
-        </button>
+        <button type="submit">{loading ? 'Loading...' : 'Sign in'}</button>
       </Form>
     </Container>
   );

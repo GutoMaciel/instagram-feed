@@ -1,11 +1,20 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '~/assets/logo-header.svg';
 
+import { signOut } from '~/store/modules/auth/actions';
+
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
+  const dispatch = useDispatch();
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
   return (
     <Container>
       <Content>
@@ -13,16 +22,18 @@ export default function Header() {
           <img src={logo} alt="Gympoint" />
           <strong>GYMPOINT</strong>
 
-          <Link to="/students/list">ALUNOS</Link>
-          <Link to="/plans/list">PLANOS</Link>
-          <Link to="/enrollments/list">MATRÍCULAS</Link>
-          <Link to="/helporders/list">PEDIDOS DE AUXÍLIO</Link>
+          <Link to="/students/list">STUDENTS</Link>
+          <Link to="/plans/list">PLANS</Link>
+          <Link to="/enrollments/list">ENROLLMENTS</Link>
+          <Link to="/helporders/list">HELP ORDERS</Link>
         </nav>
         <aside>
           <Profile>
             <div>
               <span>Gustavo Maciel</span>
-              <Link to="/">Sair do sistema</Link>
+              <button type="button" onClick={handleSignOut}>
+                Logout
+              </button>
             </div>
           </Profile>
         </aside>

@@ -26,7 +26,7 @@ export default function RouteWrapper({
 
   return (
     <Route
-      {...rest}
+      {...rest} //eslint-disable-line
       render={props => (
         <Layout>
           <Component {...props} />

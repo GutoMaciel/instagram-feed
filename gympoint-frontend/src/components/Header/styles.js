@@ -71,11 +71,13 @@ export const Profile = styled.div`
       font-weight: bold;
     }
 
-    a {
-      display: block;
-      margin-top: 2px;
+    button {
+      line-height: 16px;
+      margin-top: 4px;
       font-size: 10px;
       color: #ee4d64;
+      background: none;
+      border: 0;
     }
   }
 `;
